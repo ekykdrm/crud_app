@@ -9,7 +9,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building'
-                git master: 'main', url: 'https://github.com/ekykdrm/crud_app.git'
+                git branch: 'master', url: 'https://github.com/ekykdrm/crud_app.git'
                 bat 'npm install'
                 bat 'npm run build'
             }
