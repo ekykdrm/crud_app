@@ -24,7 +24,7 @@ pipeline{
         
         stage('Security Analysis'){
             steps {
-                withSonarQubeEnv('SonarQube Cloud') {
+                withSonarQubeEnv('SonarQube') {
                     bat 'sonar-scanner'
                 }
             }
