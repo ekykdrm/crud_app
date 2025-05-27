@@ -22,11 +22,19 @@ pipeline{
             }
         }
         
-        stage('Security Analysis'){
+        stage('Code Quality Analysis'){
             steps {
                 withSonarQubeEnv('SonarQube') {
                     bat 'sonar-scanner'
                 }
+            }
+        }
+        
+        stage('Security') {
+            steps {
+                echo 'Running npm audit for security vulnerabilities...'
+                bat 'npm audit --json > audit-report.json || true'
+                archiveArtifacts artifacts: 'audit-report.json', onlyIfSuccessful: false
             }
         }
     }
