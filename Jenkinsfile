@@ -29,11 +29,11 @@ pipeline{
                 }
             }
         }
-        
+
         stage('Security') {
             steps {
                 echo 'Running npm audit for security vulnerabilities...'
-                bat 'npm audit --json > audit-report.json || true'
+                bat 'npm audit --json > audit-report.json || exit 0'
                 archiveArtifacts artifacts: 'audit-report.json', onlyIfSuccessful: false
             }
         }
