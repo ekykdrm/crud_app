@@ -1,12 +1,9 @@
 {
-  "name": "crud-app",
+  "name": "react-crud-app",
   "version": "3.3.0",
   "private": true,
-  "homepage": "https://safdarjamal.github.io/crud-app/",
-  "author": {
-    "name": "Safdar Jamal",
-    "url": "https://safdarjamal.github.io"
-  },
+
+
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
