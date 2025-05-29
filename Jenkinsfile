@@ -43,8 +43,8 @@ pipeline{
                 echo 'Deploying app using Docker...'
                 bat '''
                 docker build -t crud-app .
-                bat 'docker stop crud-app-container || exit 0'
-                bat 'docker rm crud-app-container || exit 0'
+                docker stop crud-app-container || exit 0
+                docker rm crud-app-container || exit 0
                 docker run -d -p 4000:80 --name crud-app-test crud-app
                 '''
             }
